@@ -9,13 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.ixuea.courses.kanmeitu.activity.BaseActivity;
+import com.ixuea.courses.kanmeitu.activity.ImageDetailActivity;
 import com.ixuea.courses.kanmeitu.activity.LoginActivity;
 import com.ixuea.courses.kanmeitu.adapter.ImageAdapter;
+import com.ixuea.courses.kanmeitu.adapter.OnItemClickListener;
+import com.ixuea.courses.kanmeitu.util.Constant;
 import com.ixuea.courses.kanmeitu.util.PreferencesUtil;
 
 import java.util.ArrayList;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements OnItemClickListener {
+
+    private ImageAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +68,17 @@ public class MainActivity extends BaseActivity {
             datum.add(String.format("https://dev-courses-quick.oss-cn-beijing.aliyuncs.com/%d.jpg", i));
         }
 
-        ImageAdapter adapter = new ImageAdapter(this, datum);
+        adapter = new ImageAdapter(this, datum);
+        adapter.setOnItemClickListener(this);
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        String data=adapter.getData(position);
+
+        Intent intent = new Intent(this, ImageDetailActivity.class);
+        intent.putExtra(Constant.ID, data);
+        startActivity(intent);
     }
 }
