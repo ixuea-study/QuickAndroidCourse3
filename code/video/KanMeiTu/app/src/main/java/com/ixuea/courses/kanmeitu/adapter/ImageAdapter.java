@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ixuea.courses.kanmeitu.R;
+import com.ixuea.courses.kanmeitu.util.ImageUtil;
 
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
         }
 
         public void bind(String data) {
-
+            ImageUtil.show(imageView, data);
         }
     }
 }
