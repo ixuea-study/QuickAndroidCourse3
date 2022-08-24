@@ -1,6 +1,6 @@
 # 简介
 
-详细信息请查看：http://www.ixuea.com/sections/7171
+这是《[快速入门Android开发](http://www.ixuea.com/courses/25)》课程配套源码和资源。
 
 ## 许可证
 
