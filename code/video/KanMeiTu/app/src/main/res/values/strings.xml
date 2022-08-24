@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KanMeiTu</string>
+    <string name="app_name">看美图</string>
     <string name="copyright">Copyright © 2022 Ixuea. All Rights Reserved</string>
     <string name="hint_enter_username">请输入手机号</string>
     <string name="hint_enter_password">请输入密码</string>
