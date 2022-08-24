@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.ixuea.courses.kanmeitu.MainActivity;
 import com.ixuea.courses.kanmeitu.R;
 import com.ixuea.courses.kanmeitu.util.Constant;
+import com.ixuea.courses.kanmeitu.util.PreferencesUtil;
 import com.ixuea.courses.kanmeitu.util.RegularUtil;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText usernameView;
     private EditText passwordView;
     private Button primaryView;
+    private PreferencesUtil sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         primaryView = findViewById(R.id.primary);
 
         primaryView.setOnClickListener(this);
+
+        sp = PreferencesUtil.getInstance(this);
     }
 
     @Override
@@ -64,6 +68,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //我们这里就简单实现，将密码和用户名都写到本地了
 
         if (Constant.PHONE.equals(username) && Constant.PASSWORD.equals(password)) {
+            //登录完成后保存一个标记，下次就不用在登录了
+            sp.setLogin(true);
+
             //登录成功
             finish();
 
