@@ -17,6 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:label="@string/login"
             android:name=".activity.LoginActivity"
             android:exported="false" />
         <!-- region 启动界面 -->
