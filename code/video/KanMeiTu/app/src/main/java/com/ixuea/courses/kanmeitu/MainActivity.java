@@ -6,19 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.ixuea.courses.kanmeitu.activity.BaseActivity;
 import com.ixuea.courses.kanmeitu.activity.LoginActivity;
 import com.ixuea.courses.kanmeitu.util.PreferencesUtil;
 
-public class MainActivity extends AppCompatActivity {
-
-    private PreferencesUtil sp;
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sp = PreferencesUtil.getInstance(this);
+
 
         //退出登录
         findViewById(R.id.primary).setOnClickListener(new View.OnClickListener() {

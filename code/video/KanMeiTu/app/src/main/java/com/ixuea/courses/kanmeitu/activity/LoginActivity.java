@@ -16,12 +16,11 @@ import com.ixuea.courses.kanmeitu.util.Constant;
 import com.ixuea.courses.kanmeitu.util.PreferencesUtil;
 import com.ixuea.courses.kanmeitu.util.RegularUtil;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText usernameView;
     private EditText passwordView;
     private Button primaryView;
-    private PreferencesUtil sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +33,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         primaryView = findViewById(R.id.primary);
 
         primaryView.setOnClickListener(this);
-
-        sp = PreferencesUtil.getInstance(this);
     }
 
     @Override

@@ -14,9 +14,7 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 /**
  * 启动界面
  */
-public class SplashActivity extends AppCompatActivity {
-
-    private PreferencesUtil sp;
+public class SplashActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +32,6 @@ public class SplashActivity extends AppCompatActivity {
                 next();
             }
         }, 3000);
-
-        sp = PreferencesUtil.getInstance(this);
     }
 
     private void next() {
