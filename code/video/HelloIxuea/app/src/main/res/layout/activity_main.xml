@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <!--在这里我们添加了一个控件，每个控件都有两个必填属性，宽和高
+        值可以为：wrap_content（表示，里面的内容有多大他就有多大），
+        match_parent：表示父容器（父布局）有多大他就多大
+        20px，20dp等：精确数值，其中px就是我们常说的像素，而dp是一种和分辨率无关的尺寸，
+        是Android中特有的，简单来说就是他会根据缩放比动态计算为像素（也就是常说的dpi，每英寸所占的像素点），
+        这块涉及到Android屏幕适配，我们会在相应的Android课程中讲解到。
+        id就是设置一个id，这样在代码中才可以找到他
+        -->
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="爱学啊爱学啊爱学啊"
+            android:textColor="@color/primary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="啊啊啊" />
+
+        <!--添加一个按钮-->
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="你敢点我吗?"
+            android:textColor="#f00"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="这是可视化添加的按钮"
+            android:textColor="@color/primary" />
+
+        <Button
+            android:id="@+id/bt_open_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="打开新界面"
+            android:textColor="@color/primary" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="请输入用户名"
+            android:textColorHint="#f00" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取用户名" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_android_project_course" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showListClick"
+            android:text="RecyclerView列表"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="requestNetwork"
+            android:text="请求网络数据（请查看日志）"
+            android:textAllCaps="false" />
+    </LinearLayout>
+</ScrollView>
